@@ -1,0 +1,43 @@
+name: "Push Playlist"
+on:
+  workflow_dispatch: {}
+
+jobs:
+  playlistPush:
+    name: "Push Playlist from repository to Spotify"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@master
+        with:
+          fetch-depth: 1
+      - name: "Setup Python"
+        uses: actions/setup-python@master
+        with:
+          python-version: "3.8"
+          architecture: "x64"
+      - name: "Install Python requirements"
+        run: pip install -r spotify_client/requirements.txt
+      - name: Run Push
+        run: python run_spotify_client.py push
+        env:
+          SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+          SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+          SPOTIFY_REFRESH_TOKEN: ${{ secrets.SPOTIFY_REFRESH_TOKEN }}
+          SPOTIFY_PLAYLIST_ID: ${{ secrets.SPOTIFY_PLAYLIST_ID }}
+          PLAYLIST_FILE: playlist.tsv
+      - name: Run Pull
+        run: python run_spotify_client.py pull
+        env:
+          SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+          SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+          SPOTIFY_REFRESH_TOKEN: ${{ secrets.SPOTIFY_REFRESH_TOKEN }}
+          SPOTIFY_PLAYLIST_ID: ${{ secrets.SPOTIFY_PLAYLIST_ID }}
+          PLAYLIST_FILE: playlist.tsv
+      - name: Git Commit & Push
+        uses: EndBug/add-and-commit@v7
+        with:
+          add: "playlist.tsv"
+          message: "Update playlist from Spotify"
+          push: true

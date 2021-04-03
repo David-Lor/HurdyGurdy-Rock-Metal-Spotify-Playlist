@@ -1,0 +1,41 @@
+name: "Initial Login"
+on:
+  workflow_dispatch: {}
+
+jobs:
+  initialLogin:
+    name: "Initial login"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@master
+        with:
+          fetch-depth: 1
+      - name: "Setup Python"
+        uses: actions/setup-python@master
+        with:
+          python-version: "3.8"
+          architecture: "x64"
+      - name: "Install Python requirements"
+        run: pip install -r spotify_client/requirements.txt
+      - name: Run
+        run: python run_spotify_client.py login
+        env:
+          SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+          SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+          SPOTIFY_AUTHORIZATION_CODE: ${{ secrets.SPOTIFY_AUTHORIZATION_CODE }}
+          REFRESH_TOKEN_FILE: refresh_token.txt
+      - name: "Read Refresh Token from file"
+        # https://stackoverflow.com/a/64724369/11245195
+        run: |
+          REFRESH_TOKEN=$(cat refresh_token.txt)
+          echo "REFRESH_TOKEN=$REFRESH_TOKEN" >> $GITHUB_ENV
+      - name: Update Refresh Token in secrets
+        # https://github.com/gliech/create-github-secret-action
+        uses: gliech/create-github-secret-action@v1
+        if: ${{ env.REFRESH_TOKEN != '' }}
+        with:
+          name: "SPOTIFY_REFRESH_TOKEN"
+          value: ${{ env.REFRESH_TOKEN }}
+          pa_token: ${{ secrets.GH_TOKEN }}
