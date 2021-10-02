@@ -1,6 +1,6 @@
 from spotify_client.spotify.utils import authenticated_request
 from spotify_client.settings import spotify_settings
-from spotify_client.models import PlaylistStats
+from spotify_client.models import PlaylistStats, DatedPlaylistStats
 
 
 def get_playlist_stats() -> PlaylistStats:
@@ -15,3 +15,15 @@ def get_playlist_stats() -> PlaylistStats:
     songs = js["tracks"]["total"]
 
     return PlaylistStats(followers=followers, songs=songs)
+
+
+def append_stats_to_file(stats: PlaylistStats):
+    """Append the given PlaylistStats object to the stats file configured.
+    The stats file is an ndjson file, where each line corresponds to the JSON representation
+    of a DatedPlaylistStats object, with the stats for a single day."""
+    stats_file = spotify_settings.get_required("playlist_stats_file")
+    dated_stats = DatedPlaylistStats(**stats.dict())
+
+    with open(stats_file, "a") as f:  # open file in append mode
+        f.write("\n")
+        f.write(dated_stats.json())

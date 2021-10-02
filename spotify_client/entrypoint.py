@@ -3,7 +3,7 @@ from typing import List
 
 from spotify_client.spotify.playlist_pull import pull_playlist
 from spotify_client.spotify.playlist_push import push_playlist
-from spotify_client.spotify.playlist_stats import get_playlist_stats
+from spotify_client.spotify.playlist_stats import get_playlist_stats, append_stats_to_file
 from spotify_client.spotify.authentication import initial_login, acquire_access_token
 from spotify_client.persistence import save_refresh_token, save_playlist, load_playlist
 from spotify_client.models import SongInRepo
@@ -42,9 +42,7 @@ def push():
 def export_stats():
     acquire_access_token()
     stats = get_playlist_stats()
-    # TODO Temporary:
-    with open("stats.txt", "w") as f:
-        f.write(f"followers={stats.followers}\nsongs={stats.songs}\n")
+    append_stats_to_file(stats)
 
 
 COMMANDS = {

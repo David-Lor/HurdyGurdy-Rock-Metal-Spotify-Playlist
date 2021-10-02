@@ -1,3 +1,6 @@
+import datetime
+
+
 def iterate_array_in_chunks(arr, size: int):
     """Generator that splits the given array in chunks with a max length of "size"."""
     for i in range(0, len(arr), size):
@@ -14,3 +17,8 @@ def clear_dict(d: dict) -> dict:
 def safe_dict(d: dict) -> dict:
     """Given a dict, return a copy of it, excluding keys that might hold sensitive information"""
     return {k: v for k, v in d.items() if not any(chunk in k for chunk in ["token"])}
+
+
+def get_iso_date_now() -> str:
+    """Get current date in ISO format ("YYYY-MM-DD)."""
+    return datetime.date.today().isoformat()
