@@ -3,6 +3,7 @@ from typing import List
 
 from spotify_client.spotify.playlist_pull import pull_playlist
 from spotify_client.spotify.playlist_push import push_playlist
+from spotify_client.spotify.playlist_stats import get_playlist_stats, append_stats_to_file, export_chart
 from spotify_client.spotify.authentication import initial_login, acquire_access_token
 from spotify_client.persistence import save_refresh_token, save_playlist, load_playlist
 from spotify_client.models import SongInRepo
@@ -38,10 +39,18 @@ def push():
     push_playlist([song.uri for song in local_songs])
 
 
+def export_stats():
+    acquire_access_token()
+    stats = get_playlist_stats()
+    append_stats_to_file(stats)
+
+
 COMMANDS = {
     "login": login,
     "pull": pull,
-    "push": push
+    "push": push,
+    "export_stats": export_stats,
+    "export_chart": export_chart,
 }
 
 

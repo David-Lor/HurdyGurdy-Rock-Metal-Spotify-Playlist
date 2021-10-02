@@ -30,8 +30,8 @@ def acquire_access_token():
     Save the access token in memory settings."""
     payload = dict(
         grant_type="refresh_token",
-        client_id=spotify_settings.client_id,
-        client_secret=spotify_settings.client_secret,
+        client_id=spotify_settings.get_required("client_id"),
+        client_secret=spotify_settings.get_required("client_secret"),
         refresh_token=spotify_settings.get_required("refresh_token")
     )
 

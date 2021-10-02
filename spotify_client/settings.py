@@ -20,11 +20,13 @@ class BaseSettings(pydantic.BaseSettings):
 class GeneralSettings(BaseSettings):
     refresh_token_file: Optional[str] = None
     playlist_file: Optional[str] = None
+    playlist_stats_file: Optional[str] = None
+    playlist_chart_file: Optional[str] = None
 
 
 class SpotifySettings(BaseSettings):
-    client_id: str
-    client_secret: str
+    client_id: Optional[str]
+    client_secret: Optional[str]
     authorization_code: Optional[str] = None
     redirect_uri: str = "http://localhost"
     playlist_id: Optional[str] = None
