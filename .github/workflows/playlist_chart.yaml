@@ -1,0 +1,14 @@
+name: "Export playlist chart"
+on:
+  workflow_dispatch: {}
+
+jobs:
+  playlistChart:
+    name: "Export Spotify Playlist statistics chart and commit on repository"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@master
+        with:
+          fetch-depth: 1
