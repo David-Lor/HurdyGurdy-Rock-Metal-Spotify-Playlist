@@ -19,8 +19,13 @@ jobs:
         with:
           python-version: "3.8"
           architecture: "x64"
+      - name: "Cache pip"
+        uses: actions/cache@v2
+        with:
+          path: "~/.cache/pip"
+          key: "playlist_chart-${{ hashFiles('requirements*.txt') }}"
       - name: "Install Python requirements"
-        run: pip install -r spotify_client/requirements.txt -r spotify_client/requirements.plotly.txt
+        run: pip install --upgrade-strategy eager -r spotify_client/requirements.txt -r spotify_client/requirements.plotly.txt
       - name: "Export stats"
         run: python run_spotify_client.py export_stats
         env:
