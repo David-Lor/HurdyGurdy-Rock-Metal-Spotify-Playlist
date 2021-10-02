@@ -21,6 +21,7 @@ class GeneralSettings(BaseSettings):
     refresh_token_file: Optional[str] = None
     playlist_file: Optional[str] = None
     playlist_stats_file: Optional[str] = None
+    playlist_chart_file: Optional[str] = None
 
 
 class SpotifySettings(BaseSettings):

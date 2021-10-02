@@ -7,6 +7,8 @@ The objective of this playlist is to collect all the existing Rock/Metal songs f
 - [Spotify link](https://open.spotify.com/playlist/7GB3UHteYHqRuBCKHv1UJq)
 - [Playlist TSV](playlist.tsv)
 
+![Playlist statistics chart by days](playlist_chart.svg)
+
 ## Contributions
 
 Contributions and suggestions on the playlist (adding or removing songs) can be done by:
