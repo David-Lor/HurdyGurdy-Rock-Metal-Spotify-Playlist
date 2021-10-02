@@ -63,3 +63,8 @@ class SongInRepo(SongPull):
 
     def to_playlist_file_rows(self):
         return [self.__getattribute__(column_name) for column_name in self.Config.headers]
+
+
+class PlaylistStats(BaseModel):
+    followers: int
+    songs: int
