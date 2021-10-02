@@ -3,7 +3,7 @@ from typing import List
 
 from spotify_client.spotify.playlist_pull import pull_playlist
 from spotify_client.spotify.playlist_push import push_playlist
-from spotify_client.spotify.playlist_stats import get_playlist_stats, append_stats_to_file
+from spotify_client.spotify.playlist_stats import get_playlist_stats, append_stats_to_file, export_chart
 from spotify_client.spotify.authentication import initial_login, acquire_access_token
 from spotify_client.persistence import save_refresh_token, save_playlist, load_playlist
 from spotify_client.models import SongInRepo
@@ -50,6 +50,7 @@ COMMANDS = {
     "pull": pull,
     "push": push,
     "export_stats": export_stats,
+    "export_chart": export_chart,
 }
 
 
