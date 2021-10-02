@@ -1,6 +1,6 @@
 from spotify_client.spotify.utils import authenticated_request
 from spotify_client.settings import spotify_settings
-from spotify_client.models import SongPull
+from spotify_client.models import PlaylistStats
 
 
 def get_playlist_stats() -> PlaylistStats:
