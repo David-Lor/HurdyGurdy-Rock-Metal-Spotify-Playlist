@@ -23,7 +23,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: "~/.cache/pip"
-          key: "playlist_chart-${{ hashFiles('requirements*.txt') }}"
+          key: "playlist_chart-${{ hashFiles('requirements.txt') }}-${{ hashFiles('requirements.plotly.txt') }}"
       - name: "Install Python requirements"
         run: pip install --upgrade-strategy eager -r spotify_client/requirements.txt -r spotify_client/requirements.plotly.txt
       - name: "Export stats"
