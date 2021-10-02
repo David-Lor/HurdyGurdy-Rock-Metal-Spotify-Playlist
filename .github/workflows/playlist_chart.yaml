@@ -1,8 +1,8 @@
 name: "Export playlist chart"
 on:
   workflow_dispatch: {}
-  #schedule:
-  #  - cron: "0 6 * * *"  # daily at 6am
+  schedule:
+    - cron: "0 9 * * *"  # daily at 9am
 
 jobs:
   playlistChart:
