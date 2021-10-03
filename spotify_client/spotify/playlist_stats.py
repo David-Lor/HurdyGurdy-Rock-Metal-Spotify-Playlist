@@ -1,7 +1,7 @@
 import json
 from typing import List, Dict
 
-from spotify_client.spotify.playlist_pull import get_playlist_total_time
+from spotify_client.spotify.playlist_pull import get_playlist_total_seconds
 from spotify_client.spotify.utils import authenticated_request
 from spotify_client.settings import spotify_settings, general_settings
 from spotify_client.models import PlaylistStats, DatedPlaylistStats
