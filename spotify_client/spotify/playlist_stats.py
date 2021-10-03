@@ -87,26 +87,29 @@ def export_chart():
     fig.add_trace(go.Scatter(
         x=dataframe_followers["date"],
         y=dataframe_followers["value"],
-        mode="lines+markers",
+        mode="lines+markers+text",
         name="Followers",
         line=dict(color="blue"),
-        text=[str(v) for v in dataframe_followers["value"]]
+        text=[str(v) for v in dataframe_followers["value"]],
+        textposition="top center",
     ))
     fig.add_trace(go.Scatter(
         x=dataframe_songs["date"],
         y=dataframe_songs["value"],
-        mode="lines+markers",
+        mode="lines+markers+text",
         name="Songs",
         line=dict(color="orange"),
         text=[str(v) for v in dataframe_songs["value"]],
+        textposition="top center",
     ))
     fig.add_trace(go.Scatter(
         x=dataframe_duration["date"],
         y=dataframe_duration["value"],
-        mode="lines+markers",
+        mode="lines+markers+text",
         name="Length (hours)",
         line=dict(color="green"),
         text=[str(round(v, 1)) for v in dataframe_duration["value"]],
+        textposition="top center",
     ))
 
     fig.write_image(chart_file)
