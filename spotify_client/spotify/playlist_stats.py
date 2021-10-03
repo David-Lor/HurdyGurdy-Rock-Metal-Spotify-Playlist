@@ -1,6 +1,7 @@
 import json
 from typing import List, Dict
 
+from spotify_client.spotify.playlist_pull import get_playlist_total_seconds
 from spotify_client.spotify.utils import authenticated_request
 from spotify_client.settings import spotify_settings, general_settings
 from spotify_client.models import PlaylistStats, DatedPlaylistStats
@@ -16,8 +17,9 @@ def get_playlist_stats() -> PlaylistStats:
 
     followers = js["followers"]["total"]
     songs = js["tracks"]["total"]
+    total_seconds = get_playlist_total_seconds()
 
-    return PlaylistStats(followers=followers, songs=songs)
+    return PlaylistStats(followers=followers, songs=songs, total_seconds=total_seconds)
 
 
 def append_stats_to_file(stats: PlaylistStats):
@@ -67,6 +69,7 @@ def export_chart():
 
     dataframe_followers = dict(date=[], value=[])
     dataframe_songs = dict(date=[], value=[])
+    dataframe_duration = dict(date=[], value=[])
     dates_stats = load_stats()
 
     for date, stats in dates_stats.items():
@@ -74,11 +77,39 @@ def export_chart():
         dataframe_songs["date"].append(date)
         dataframe_followers["value"].append(stats.followers)
         dataframe_songs["value"].append(stats.songs)
+        dataframe_duration["date"].append(date)
+        dataframe_duration["value"].append(float(stats.total_seconds / 60 / 60))  # duration in hours
 
     dataframe_followers = pd.DataFrame(dataframe_followers)
     dataframe_songs = pd.DataFrame(dataframe_songs)
 
     fig = go.Figure()
-    fig.add_trace(go.Scatter(x=dataframe_followers["date"], y=dataframe_followers["value"], mode="lines+markers", name="Followers"))
-    fig.add_trace(go.Scatter(x=dataframe_songs["date"], y=dataframe_songs["value"], mode="lines+markers", name="Songs"))
+    fig.add_trace(go.Scatter(
+        x=dataframe_followers["date"],
+        y=dataframe_followers["value"],
+        mode="lines+markers+text",
+        name="Followers",
+        line=dict(color="blue"),
+        text=[str(v) for v in dataframe_followers["value"]],
+        textposition="top center",
+    ))
+    fig.add_trace(go.Scatter(
+        x=dataframe_songs["date"],
+        y=dataframe_songs["value"],
+        mode="lines+markers+text",
+        name="Songs",
+        line=dict(color="orange"),
+        text=[str(v) for v in dataframe_songs["value"]],
+        textposition="top center",
+    ))
+    fig.add_trace(go.Scatter(
+        x=dataframe_duration["date"],
+        y=dataframe_duration["value"],
+        mode="lines+markers+text",
+        name="Length (hours)",
+        line=dict(color="green"),
+        text=[str(round(v, 1)) for v in dataframe_duration["value"]],
+        textposition="top center",
+    ))
+
     fig.write_image(chart_file)
