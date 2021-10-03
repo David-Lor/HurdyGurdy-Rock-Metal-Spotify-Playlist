@@ -112,4 +112,7 @@ def export_chart():
         textposition="top center",
     ))
 
+    # TODO RM:
+    print("VALUES TEXTS:", [str(round(v, 1)) for v in dataframe_duration["value"]])
+
     fig.write_image(chart_file)
