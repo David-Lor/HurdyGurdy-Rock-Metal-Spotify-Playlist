@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Optional
 
 from spotify_client.spotify.utils import authenticated_request
 from spotify_client.models import SongPull
