@@ -78,13 +78,35 @@ def export_chart():
         dataframe_followers["value"].append(stats.followers)
         dataframe_songs["value"].append(stats.songs)
         dataframe_duration["date"].append(date)
-        dataframe_duration["value"].append(int(stats.total_seconds / 60 / 60))  # duration in hours
+        dataframe_duration["value"].append(float(stats.total_seconds / 60 / 60))  # duration in hours
 
     dataframe_followers = pd.DataFrame(dataframe_followers)
     dataframe_songs = pd.DataFrame(dataframe_songs)
 
     fig = go.Figure()
-    fig.add_trace(go.Scatter(x=dataframe_followers["date"], y=dataframe_followers["value"], mode="lines+markers", name="Followers", line=dict(color="blue")))
-    fig.add_trace(go.Scatter(x=dataframe_songs["date"], y=dataframe_songs["value"], mode="lines+markers", name="Songs", line=dict(color="orange")))
-    fig.add_trace(go.Scatter(x=dataframe_duration["date"], y=dataframe_duration["value"], mode="lines+markers", name="Length (hours)", line=dict(color="green")))
+    fig.add_trace(go.Scatter(
+        x=dataframe_followers["date"],
+        y=dataframe_followers["value"],
+        mode="lines+markers",
+        name="Followers",
+        line=dict(color="blue"),
+        text=[str(v) for v in dataframe_followers["value"]]
+    ))
+    fig.add_trace(go.Scatter(
+        x=dataframe_songs["date"],
+        y=dataframe_songs["value"],
+        mode="lines+markers",
+        name="Songs",
+        line=dict(color="orange"),
+        text=[str(v) for v in dataframe_songs["value"]],
+    ))
+    fig.add_trace(go.Scatter(
+        x=dataframe_duration["date"],
+        y=dataframe_duration["value"],
+        mode="lines+markers",
+        name="Length (hours)",
+        line=dict(color="green"),
+        text=[str(round(v, 1)) for v in dataframe_duration["value"]],
+    ))
+
     fig.write_image(chart_file)
