@@ -19,7 +19,7 @@ def get_playlist_stats() -> PlaylistStats:
     songs = js["tracks"]["total"]
     total_seconds = get_playlist_total_seconds()
 
-    return PlaylistStats(followers=followers, songs=songs)
+    return PlaylistStats(followers=followers, songs=songs, total_seconds=total_seconds)
 
 
 def append_stats_to_file(stats: PlaylistStats):

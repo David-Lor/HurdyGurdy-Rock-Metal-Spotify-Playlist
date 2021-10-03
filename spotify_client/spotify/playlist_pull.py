@@ -11,7 +11,7 @@ def _parse_track(track_data: dict) -> SongPull:
         artist=track_data["artists"][0]["name"],
         album=track_data["album"]["name"],
         name=track_data["name"],
-        time_seconds=int(track_data["duration_ms"] / 1000)
+        total_seconds=int(track_data["duration_ms"] / 1000)
     )
 
 
@@ -39,4 +39,4 @@ def get_playlist_total_seconds(songs: Optional[List[SongPull]] = None) -> int:
     if songs is None:
         songs = pull_playlist()
 
-    return sum(song.time_seconds for song in songs)
+    return sum(song.total_seconds for song in songs)
