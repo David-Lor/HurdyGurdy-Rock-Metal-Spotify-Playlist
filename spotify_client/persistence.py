@@ -29,7 +29,8 @@ def save_playlist(songs: List[SongInRepo]):
 
 def load_playlist() -> List[Union[SongInRepo, SongNew]]:
     songs = list()
-    with open(general_settings.playlist_file, "r") as file:
+    playlist_file = general_settings.get_required("playlist_file")
+    with open(playlist_file, "r") as file:
         for i, line in enumerate(file.readlines()):
             try:
                 if i == 0:
