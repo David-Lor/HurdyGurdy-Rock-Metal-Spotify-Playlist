@@ -56,8 +56,12 @@ COMMANDS = {
 
 def main():
     command = sys.argv[-1]
+
     try:
-        COMMANDS[command]()
+        func = COMMANDS[command]
     except KeyError:
         print("No valid command given!")
         exit(1)
+
+    # noinspection PyUnboundLocalVariable
+    func()
