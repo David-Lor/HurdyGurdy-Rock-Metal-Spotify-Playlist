@@ -1,14 +1,15 @@
 import json
-from typing import Dict
+from typing import Optional, List, Dict
 
 from spotify_client.spotify.playlist_pull import get_playlist_total_seconds
 from spotify_client.spotify.utils import authenticated_request
 from spotify_client.settings import spotify_settings, general_settings
-from spotify_client.models import PlaylistStats, DatedPlaylistStats
+from spotify_client.models import PlaylistStats, DatedPlaylistStats, SongPull
 
 
-def get_playlist_stats() -> PlaylistStats:
-    """Fetch stats from the playlist, as a PlaylistStats object"""
+def get_playlist_stats(current_songs: Optional[List[SongPull]] = None) -> PlaylistStats:
+    """Fetch stats from the playlist, as a PlaylistStats object.
+    List of SongPull can be given; if not, the playlist is pulled."""
     playlist_id = spotify_settings.get_required("playlist_id")
     url = f"https://api.spotify.com/v1/playlists/{playlist_id}"
 
@@ -17,7 +18,7 @@ def get_playlist_stats() -> PlaylistStats:
 
     followers = js["followers"]["total"]
     songs = js["tracks"]["total"]
-    total_seconds = get_playlist_total_seconds()
+    total_seconds = get_playlist_total_seconds(current_songs)
 
     return PlaylistStats(followers=followers, songs=songs, total_seconds=total_seconds)
 

@@ -40,8 +40,8 @@ def push():
 
 
 def export_stats():
-    acquire_access_token()
-    stats = get_playlist_stats()
+    local_songs = load_playlist()
+    stats = get_playlist_stats(local_songs)
     append_stats_to_file(stats)
 
 
