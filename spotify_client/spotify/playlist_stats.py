@@ -1,5 +1,5 @@
 import json
-from typing import List, Dict
+from typing import Dict
 
 from spotify_client.spotify.playlist_pull import get_playlist_total_seconds
 from spotify_client.spotify.utils import authenticated_request
