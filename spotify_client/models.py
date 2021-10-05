@@ -53,7 +53,6 @@ class SongPull(BaseSong):
     name: String
     artist: String
     album: String
-    total_seconds: int
 
 
 class SongInRepo(SongPull):
@@ -72,7 +71,6 @@ class PlaylistStats(BaseModel):
     """Staticstics of a playlist"""
     followers: int
     songs: int
-    total_seconds: int
 
 
 class DatedPlaylistStats(PlaylistStats):
