@@ -53,6 +53,7 @@ class SongPull(BaseSong):
     name: String
     artist: String
     album: String
+    total_seconds: int
 
 
 class SongInRepo(SongPull):
@@ -60,7 +61,7 @@ class SongInRepo(SongPull):
     comment: StringEmptyable = ""
 
     class Config(SongPull.Config):
-        headers = ["id", "name", "artist", "album", "comment"]
+        headers = ["id", "name", "artist", "album", "total_seconds", "comment"]
         """Song attributes in the same order as used for columns on playlist file"""
 
     def to_playlist_file_rows(self):
@@ -71,6 +72,7 @@ class PlaylistStats(BaseModel):
     """Staticstics of a playlist"""
     followers: int
     songs: int
+    total_seconds: int
 
 
 class DatedPlaylistStats(PlaylistStats):
