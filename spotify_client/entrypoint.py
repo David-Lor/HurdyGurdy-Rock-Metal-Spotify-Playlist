@@ -41,7 +41,8 @@ def push():
 
 def export_stats():
     acquire_access_token()
-    stats = get_playlist_stats()
+    local_songs = load_playlist()
+    stats = get_playlist_stats(local_songs)
     append_stats_to_file(stats)
 
 
@@ -56,8 +57,12 @@ COMMANDS = {
 
 def main():
     command = sys.argv[-1]
+
     try:
-        COMMANDS[command]()
+        func = COMMANDS[command]
     except KeyError:
         print("No valid command given!")
         exit(1)
+
+    # noinspection PyUnboundLocalVariable
+    func()

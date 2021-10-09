@@ -29,11 +29,12 @@ jobs:
       - name: "Export stats"
         run: python run_spotify_client.py export_stats
         env:
+          PLAYLIST_STATS_FILE: playlist_stats.ndjson
+          PLAYLIST_FILE: playlist.tsv
           SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
           SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
           SPOTIFY_REFRESH_TOKEN: ${{ secrets.SPOTIFY_REFRESH_TOKEN }}
           SPOTIFY_PLAYLIST_ID: ${{ secrets.SPOTIFY_PLAYLIST_ID }}
-          PLAYLIST_STATS_FILE: playlist_stats.ndjson
       - name: "Export chart"
         run: python run_spotify_client.py export_chart
         env:

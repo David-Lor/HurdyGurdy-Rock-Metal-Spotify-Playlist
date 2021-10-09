@@ -61,11 +61,11 @@ class SongInRepo(SongPull):
     comment: StringEmptyable = ""
 
     class Config(SongPull.Config):
-        headers = ["id", "name", "artist", "album", "comment"]
+        headers = ["id", "name", "artist", "album", "total_seconds", "comment"]
         """Song attributes in the same order as used for columns on playlist file"""
 
     def to_playlist_file_rows(self):
-        return [self.__getattribute__(column_name) for column_name in self.Config.headers]
+        return [str(self.__getattribute__(column_name)) for column_name in self.Config.headers]
 
 
 class PlaylistStats(BaseModel):
