@@ -20,7 +20,7 @@ jobs:
       - name: "Cache Python packages"
         uses: actions/cache@v2
         with:
-          key: "playlist_chart-${{ hashFiles('**/spotify_client/requirements*.txt') }}"
+          key: "python_packages_cache-${{ hashFiles('**/spotify_client/requirements*.txt') }}"
           path: |
             ~/.cache/pip
             ~/.local/lib/python3.8/site-packages
