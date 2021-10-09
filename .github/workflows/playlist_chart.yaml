@@ -19,10 +19,17 @@ jobs:
         with:
           python-version: "3.8"
           architecture: "x64"
+      - name: "Hash requirements files for cache key"
+        id: hash_requirements
+        uses: theowenyoung/folder-hash@v2.0.1
+        with:
+          path: |
+            spotify_client/requirements.txt
+            spotify_client/requirements.plotly.txt
       - name: "Cache Python packages"
         uses: actions/cache@v2
         with:
-          key: "python_packages_cache-${{ hashFiles('**/spotify_client/requirements*.txt') }}"
+          key: "python_cache_chart-${{ steps.hash_requirements.outputs.hash }}"
           path: |
             ~/.cache/pip
             ~/.local/lib/python3.8/site-packages
