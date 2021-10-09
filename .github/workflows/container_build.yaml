@@ -1,9 +1,6 @@
 name: "Build workflows container"
 on:
   workflow_dispatch: {}
-  push:
-    branches:
-      - "workflow-cache-docker-image"
 
 jobs:
   build:
