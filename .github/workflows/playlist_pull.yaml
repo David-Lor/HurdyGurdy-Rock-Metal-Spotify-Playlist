@@ -10,6 +10,7 @@ on:
 jobs:
   playlistPull:
     name: "Pull Spotify Playlist and commit on repository"
+    runs-on: ubuntu-latest
     container:
       image: "ghcr.io/david-lor/spotify-playlist-github-workflows"
 
