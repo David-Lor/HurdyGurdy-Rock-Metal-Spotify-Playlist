@@ -19,10 +19,16 @@ jobs:
         with:
           python-version: "3.8"
           architecture: "x64"
+      - name: "Hash requirements files for cache key"
+        id: hash_requirements
+        run: |-
+          cat spotify_client/requirements.txt >> /tmp/requirements.hash
+          cat spotify_client/requirements.plotly.txt >> /tmp/requirements.hash
+          echo "::set-output name=hash::$(printf $(sha256sum /tmp/requirements.hash))"
       - name: "Cache Python packages"
         uses: actions/cache@v2
         with:
-          key: "python_packages_cache-${{ hashFiles('**/spotify_client/requirements*.txt') }}"
+          key: "python_cache_chart-${{ steps.hash_requirements.outputs.hash }}"
           path: |
             ~/.cache/pip
             ~/.local/lib/python3.8/site-packages
