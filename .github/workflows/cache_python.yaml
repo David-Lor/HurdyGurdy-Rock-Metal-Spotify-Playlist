@@ -1,0 +1,28 @@
+name: "Cache Python packages"
+on:
+  workflow_dispatch: {}
+
+jobs:
+  cache:
+    name: "Create Python packages cache"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@master
+        with:
+          fetch-depth: 1
+      - name: "Setup Python"
+        uses: actions/setup-python@master
+        with:
+          python-version: "3.8"
+          architecture: "x64"
+      - name: "Cache Python packages"
+        uses: actions/cache@v2
+        with:
+          key: "python_packages_cache-${{ hashFiles('**/spotify_client/requirements*.txt') }}"
+          path: |
+            ~/.cache/pip
+            ~/.local/lib/python3.8/site-packages
+      - name: "Install all Python requirements"
+        run: pip install --user -r spotify_client/requirements.txt -r spotify_client/requirements.plotly.txt
