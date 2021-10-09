@@ -27,7 +27,7 @@ jobs:
             ~/.cache/pip
             ~/.local/lib/python3.8/site-packages
       - name: "Install Python requirements"
-        run: pip install -r spotify_client/requirements.txt
+        run: pip install --user -r spotify_client/requirements.txt
       - name: Run
         run: python run_spotify_client.py pull
         env:
