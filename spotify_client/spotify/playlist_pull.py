@@ -19,7 +19,7 @@ def _parse_track(track_data: dict) -> SongPull:
 def _detect_duplicates(songs: List[SongPull]):
     """Detect repeated songs on the given list of SongPull objects. Duplicates are detected from the songs IDs.
     If any repeated track is found, log all the repeated songs and exit the application with exitcode 1."""
-    songs_counter = Counter(songs)
+    songs_counter = Counter([song.id for song in songs])
     repeated_ids = {song_id: song_count for song_id, song_count in songs_counter.items() if song_count > 1}
 
     if repeated_ids:
