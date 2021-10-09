@@ -1,3 +1,0 @@
-name: "Build workflows container"
-on:
-  workflow_dispatch: {}
