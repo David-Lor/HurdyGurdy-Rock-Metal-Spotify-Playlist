@@ -24,6 +24,6 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: "Docker build"
-        run: docker build . -t ${IMAGE_TAG}
+        run: docker build . -f .github/workflows/container_build/Dockerfile -t ${IMAGE_TAG}
       - name: "Docker push into ghcr"
         run: docker push ${IMAGE_TAG}
