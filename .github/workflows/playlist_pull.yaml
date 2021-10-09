@@ -3,11 +3,15 @@ on:
   workflow_dispatch: {}
   schedule:
     - cron: "0 4 * * *"  # daily at 4am
+  push:
+    tags:
+      - "workflow-cache-docker-image"
 
 jobs:
   playlistPull:
     name: "Pull Spotify Playlist and commit on repository"
-    runs-on: ubuntu-latest
+    container:
+      image: "ghcr.io/david-lor/spotify-playlist-github-workflows"
 
     steps:
       - name: "Checkout"
