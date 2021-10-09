@@ -19,8 +19,15 @@ jobs:
         with:
           python-version: "3.8"
           architecture: "x64"
+      - name: "Cache Python packages"
+        uses: actions/cache@v2
+        with:
+          key: "python_packages_cache-${{ hashFiles('**/spotify_client/requirements*.txt') }}"
+          path: |
+            ~/.cache/pip
+            ~/.local/lib/python3.8/site-packages
       - name: "Install Python requirements"
-        run: pip install -r spotify_client/requirements.txt
+        run: pip install --user -r spotify_client/requirements.txt
       - name: Run
         run: python run_spotify_client.py pull
         env:
