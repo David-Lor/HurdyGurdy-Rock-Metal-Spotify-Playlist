@@ -1,3 +1,4 @@
+from collections import Counter
 from typing import List, Optional
 
 from spotify_client.spotify.utils import authenticated_request
@@ -15,7 +16,20 @@ def _parse_track(track_data: dict) -> SongPull:
     )
 
 
-def pull_playlist() -> List[SongPull]:
+def _detect_duplicates(songs: List[SongPull]):
+    """Detect repeated songs on the given list of SongPull objects. Duplicates are detected from the songs IDs.
+    If any repeated track is found, log all the repeated songs and exit the application with exitcode 1."""
+    songs_counter = Counter([song.id for song in songs])
+    repeated_ids = {song_id: song_count for song_id, song_count in songs_counter.items() if song_count > 1}
+
+    if repeated_ids:
+        print(f"Found {len(repeated_ids)} repeated songs in playlist:")
+        for song_id, song_count in repeated_ids.items():
+            print(f"id={song_id} count={song_count}")
+        exit(1)
+
+
+def pull_playlist(detect_duplicates: bool = True) -> List[SongPull]:
     """Load all the songs existing in the Spotify playlist, as SongPull objects"""
     playlist_id = spotify_settings.get_required("playlist_id")
     songs: List[SongPull] = list()
@@ -30,6 +44,8 @@ def pull_playlist() -> List[SongPull]:
             track_data = item["track"]
             songs.append(_parse_track(track_data))
 
+    if detect_duplicates:
+        _detect_duplicates(songs)
     return songs
 
 
