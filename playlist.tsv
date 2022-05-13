@@ -90,12 +90,15 @@ id	name	artist	album	total_seconds	comment
 3UpYgKvPe6JycVvWyC02zk	Havoc	Eluveitie	Helvetios	244	
 26d8kjsZ68Za35XchYOtr6	The Uprising	Eluveitie	Helvetios	221	
 2ONx4h2enieY9QyG2I2J1S	Helvetios	Eluveitie	Helvetios	240	
+0NTaI7K5DXAJgjFNvYEH6k	Alesia	Eluveitie	Helvetios	238	
+11qglHc16ezB4k4LGwWA44	Luxtos	Eluveitie	Helvetios	235	
 7rUE9wNDR6sz5wflbTR0nw	Everything Remains as It Never Was	Eluveitie	Everything Remains (As It Never Was)	265	
 06zrgWaxQ22ctdS6cZRV4T	Thousandfold	Eluveitie	Everything Remains (As It Never Was)	200	
 1d0joYgcgKUNzEG5gfZKDf	The Essence of the Ashes	Eluveitie	Everything Remains (As It Never Was)	239	
 019wPxGxOb5QO9mwR4POM3	Quoth the Raven	Eluveitie	Everything Remains (As It Never Was)	282	
 77VRVtJ7eJ7tKbvLn17rr8	Sempiternal Embers	Eluveitie	Everything Remains (As It Never Was)	292	
 30dYu0zyDIU6TvUjdswzYC	Lugdunon	Eluveitie	Everything Remains (As It Never Was)	241	
+7ya139jnIj2O1yNMc9bfwD	Kingdom Come Undone	Eluveitie	Everything Remains (As It Never Was)	202	
 4yM6mWWdCiJu9NPUDmSryS	Brictom	Eluveitie	Evocation I - The Arcane Dominion	262	
 1F46nwQyq2YbkddA6TMxWK	The Arcane Dominion	Eluveitie	Evocation I - The Arcane Dominion	342	
 0cPttQFRjIgOVVnKGCJyoq	Omnos	Eluveitie	Evocation I - The Arcane Dominion	228	
@@ -145,10 +148,6 @@ id	name	artist	album	total_seconds	comment
 33VY2vaotp48AS4DbzpXf6	Exhale	Apocalypse Orchestra	The End Is Nigh	453	
 4qZxZ3bSexkQMeYq4NypyW	The Great Mortality	Apocalypse Orchestra	The End Is Nigh	452	
 5WdqR58x8FFf6lgmpCOunx	Here Be Monsters	Apocalypse Orchestra	The End Is Nigh	643	
-7ya139jnIj2O1yNMc9bfwD	Kingdom Come Undone	Eluveitie	Everything Remains (As It Never Was)	202	
-0NTaI7K5DXAJgjFNvYEH6k	Alesia	Eluveitie	Helvetios	238	
-11qglHc16ezB4k4LGwWA44	Luxtos	Eluveitie	Helvetios	235	
-5fT6oWB5PjPRwDaYY64QC0	Uis Elveti	Eluveitie	The Early Years	264	
 14waPR3cDxfCk15v7WEiP9	Wolfszeit	Ignis Fatuu	Neue Ufer	265	
 0OPIzijWgbsDaAIOwhgFfJ	Naval Hitchhike	Storm Seeker	Naval Hitchhike	176	
 63C8EIdO2gPZto4ivKeGDR	Pirate Squad	Storm Seeker	Beneath in the Cold	196	
@@ -161,9 +160,10 @@ id	name	artist	album	total_seconds	comment
 1k8D4tMNIiIFcQrb4bdsHF	The Longing	Storm Seeker	Pirate Scum	241	
 06C7xapNmwIj7y5WA4LLuz	Destined Course	Storm Seeker	Pirate Scum	216	
 0qrsIqVpVpcqdEIytgWEHr	Jack	Storm Seeker	Pirate Scum	268	
+3Zscf389qeupVE0dFEh0r3	How to be a Pirate	Storm Seeker	How to be a Pirate	203	
 4jJrEHDffV9v109ZwnLADZ	Königin der Käfer	Subway To Sally	HEY!	243	
 6M0RMEWjGeYUzjhCUVa0X2	Island	Subway To Sally	HEY!	281	
-3Zscf389qeupVE0dFEh0r3	How to be a Pirate	Storm Seeker	How to be a Pirate	203	
+62KmDs63HUqGNBtnymdKU4	Für immer	Subway To Sally	MitGift	305	
 1c22LEl3XMqX5MOAq3S1iZ	Räuber der Nacht	Nachtgeschrei	Eine erste Kerbe	303	
 1TEELZT1Xu05QD5AxakA4K	Glut in euren Augen	Nachtgeschrei	Eine erste Kerbe	245	
 42hmwtmq4GUSxWmf3yThUm	Windfahrt	Nachtgeschrei	Eine erste Kerbe	318	
@@ -180,7 +180,6 @@ id	name	artist	album	total_seconds	comment
 5ckjEP7kPf4GZJWa4vCNZe	Hinter deinen Augen	Nachtgeschrei	Ardeo	240	
 26S5PrO2NIwDTKgVEAXIOq	Lichtschimmer	Nachtgeschrei	Ardeo	296	
 3L6opajviNSTOaxENrdHf9	Apple Tree	Altar Of I	Apple Tree	323	
-62KmDs63HUqGNBtnymdKU4	Für immer	Subway To Sally	MitGift	305	
 70Ra3MOIlbSeNZIUC1LxQ3	Killed by Her Scream	Bansidh	Killed by Her Scream	275	
 4FNm34TBz67yIRB4vhclPF	DANCE	Cellar Darling	DANCE	648	
 5XLiZsjN9yuGMmhDZyazsq	Master Of Puppets	Michalina Malisz	Heavy Gurdy Vol. 1	340	Cover
