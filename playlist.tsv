@@ -86,11 +86,14 @@ id	name	artist	album	total_seconds	comment
 3UpYgKvPe6JycVvWyC02zk	Havoc	Eluveitie	Helvetios	244	
 26d8kjsZ68Za35XchYOtr6	The Uprising	Eluveitie	Helvetios	221	
 2ONx4h2enieY9QyG2I2J1S	Helvetios	Eluveitie	Helvetios	240	
+0NTaI7K5DXAJgjFNvYEH6k	Alesia	Eluveitie	Helvetios	238	
+11qglHc16ezB4k4LGwWA44	Luxtos	Eluveitie	Helvetios	235	
 7rUE9wNDR6sz5wflbTR0nw	Everything Remains as It Never Was	Eluveitie	Everything Remains (As It Never Was)	265	
 06zrgWaxQ22ctdS6cZRV4T	Thousandfold	Eluveitie	Everything Remains (As It Never Was)	200	
 1d0joYgcgKUNzEG5gfZKDf	The Essence of the Ashes	Eluveitie	Everything Remains (As It Never Was)	239	
 019wPxGxOb5QO9mwR4POM3	Quoth the Raven	Eluveitie	Everything Remains (As It Never Was)	282	
 77VRVtJ7eJ7tKbvLn17rr8	Sempiternal Embers	Eluveitie	Everything Remains (As It Never Was)	292	
+7ya139jnIj2O1yNMc9bfwD	Kingdom Come Undone	Eluveitie	Everything Remains (As It Never Was)	202	
 0cPttQFRjIgOVVnKGCJyoq	Omnos	Eluveitie	Evocation I - The Arcane Dominion	228	
 6vpsONJjFZrcuJo0QSRuec	Omnos - Early Metal Version	Eluveitie	Evocation I - The Arcane Dominion	229	
 1KmeyQfVjX1odybN9aEfWt	Inis Mona	Eluveitie	Slania	249	
@@ -136,10 +139,6 @@ id	name	artist	album	total_seconds	comment
 33VY2vaotp48AS4DbzpXf6	Exhale	Apocalypse Orchestra	The End Is Nigh	453	
 4qZxZ3bSexkQMeYq4NypyW	The Great Mortality	Apocalypse Orchestra	The End Is Nigh	452	
 5WdqR58x8FFf6lgmpCOunx	Here Be Monsters	Apocalypse Orchestra	The End Is Nigh	643	
-7ya139jnIj2O1yNMc9bfwD	Kingdom Come Undone	Eluveitie	Everything Remains (As It Never Was)	202	
-0NTaI7K5DXAJgjFNvYEH6k	Alesia	Eluveitie	Helvetios	238	
-11qglHc16ezB4k4LGwWA44	Luxtos	Eluveitie	Helvetios	235	
-5fT6oWB5PjPRwDaYY64QC0	Uis Elveti	Eluveitie	The Early Years	264	
 14waPR3cDxfCk15v7WEiP9	Wolfszeit	Ignis Fatuu	Neue Ufer	265	
 0OPIzijWgbsDaAIOwhgFfJ	Naval Hitchhike	Storm Seeker	Naval Hitchhike	176	
 63C8EIdO2gPZto4ivKeGDR	Pirate Squad	Storm Seeker	Beneath in the Cold	196	
@@ -152,9 +151,10 @@ id	name	artist	album	total_seconds	comment
 1k8D4tMNIiIFcQrb4bdsHF	The Longing	Storm Seeker	Pirate Scum	241	
 06C7xapNmwIj7y5WA4LLuz	Destined Course	Storm Seeker	Pirate Scum	216	
 0qrsIqVpVpcqdEIytgWEHr	Jack	Storm Seeker	Pirate Scum	268	
+3Zscf389qeupVE0dFEh0r3	How to be a Pirate	Storm Seeker	How to be a Pirate	203	
 4jJrEHDffV9v109ZwnLADZ	Königin der Käfer	Subway To Sally	HEY!	243	
 6M0RMEWjGeYUzjhCUVa0X2	Island	Subway To Sally	HEY!	281	
-3Zscf389qeupVE0dFEh0r3	How to be a Pirate	Storm Seeker	How to be a Pirate	203	
+62KmDs63HUqGNBtnymdKU4	Für immer	Subway To Sally	MitGift	305	
 1c22LEl3XMqX5MOAq3S1iZ	Räuber der Nacht	Nachtgeschrei	Eine erste Kerbe	303	
 1TEELZT1Xu05QD5AxakA4K	Glut in euren Augen	Nachtgeschrei	Eine erste Kerbe	245	
 42hmwtmq4GUSxWmf3yThUm	Windfahrt	Nachtgeschrei	Eine erste Kerbe	318	
@@ -171,9 +171,7 @@ id	name	artist	album	total_seconds	comment
 5ckjEP7kPf4GZJWa4vCNZe	Hinter deinen Augen	Nachtgeschrei	Ardeo	240	
 26S5PrO2NIwDTKgVEAXIOq	Lichtschimmer	Nachtgeschrei	Ardeo	296	
 3L6opajviNSTOaxENrdHf9	Apple Tree	Altar Of I	Apple Tree	323	
-62KmDs63HUqGNBtnymdKU4	Für immer	Subway To Sally	MitGift	305	
 70Ra3MOIlbSeNZIUC1LxQ3	Killed by Her Scream	Bansidh	Killed by Her Scream	275	
-2BmMKnHbVGUp3jM2cBNbJT	Triskelion	Windmill	Dance of Fire and Freedom	309	
 4FNm34TBz67yIRB4vhclPF	DANCE	Cellar Darling	DANCE	648	
 5XLiZsjN9yuGMmhDZyazsq	Master Of Puppets	Michalina Malisz	Heavy Gurdy Vol. 1	340	Cover
 7Bqqxav32KuHFBobjQx1R7	Wishmaster	Michalina Malisz	Heavy Gurdy Vol. 1	222	Cover
@@ -206,7 +204,6 @@ id	name	artist	album	total_seconds	comment
 7JCR5Hsc1wsRtpnpdMRSNg	Aetherreise	CANTORCA	Aetherreise	308	
 6wY0x2ZbY0PvFoOboDxs7W	Spellbound	Tempus	Spellbound	285	
 7ye5vntqZNRfFecs9mGSRI	Ich tanze, also bin ich (2020)	Veytstanz	Ich tanze, also bin ich (2020)	222	
-4ufYTjB7rIt6yPgzMAGFnW	Veitstanz (2014 Version) (feat. Saltatio Mortis, Schandmaul, Feuerschwanz, Chris Harms, MajorVoice, Patty Gurdy)	Subway To Sally	Veitstanz (2014 Version) (feat. Saltatio Mortis, Schandmaul, Feuerschwanz, Chris Harms, MajorVoice, Patty Gurdy)	300	
 679hwfJbzJa4S5PookxUWK	Las escardadoras	Tündra	Voces del desarraigo: Músicas de la España vaciada	284	
 7EHKHpad3AohehlNomJuXu	Farewell (feat. Patty Gurdy)	dArtagnan	Feuer & Flamme	168	
 3wkIbV5m0UBa4QN22SvgpQ	Schwingen	Waldkauz	Schwingen	269	
@@ -216,3 +213,12 @@ id	name	artist	album	total_seconds	comment
 4PyGp3ffRFvr5pxIihRgKU	The Pretender	Fabienne Erni	The Pretender	269	Cover
 7lk2J4f9VWWflDgOpwfS6C	Shroud of Solitude	Victoria K	Essentia	213	
 1w880uPohkaDORRqRiKDNB	În frânt	E-An-Na	Nesfârşite	283	
+5oNJBr7qYLOSeFIwt7AX87	Queen Of The Dark	Riverwood	Shadows And Flames	432	
+3zPmh6Q1Y38yr35WsVTocb	Eis und Asche	Versengold	Was kost die Welt	242	
+6jSjEBIH69bwgunmX1s5MX	Fortuna	Krayenzeit	Staub & Tränen Teil II: ... zurück ins Licht	217	
+0wAKo9AUHDEl2OGF4zRyPm	Kriegerin	Krayenzeit	Staub & Tränen Teil II: ... zurück ins Licht	316	
+05kJfvEzYHlWqoZipeod4b	Incantatem - Staub und Tränen Teil II	Krayenzeit	Staub & Tränen Teil II: ... zurück ins Licht	299	
+4eAxME6M5bv9n7nCcvyOGu	Diese Nacht ist unser Tag	Krayenzeit	Staub & Tränen Teil II: ... zurück ins Licht	222	
+2xm34RKMtkw47FclQNH2uJ	Dezemberstern	Krayenzeit	Staub & Tränen Teil II: ... zurück ins Licht	299	
+1aLa66KAoHOLL8ATkt2zAN	Teufelsgeiger	Krayenzeit	Staub & Tränen Teil II: ... zurück ins Licht	278	
+3axBlc5ZziFkq8jrN3cuWx	Gwydion	Faun	Gwydion	239	
