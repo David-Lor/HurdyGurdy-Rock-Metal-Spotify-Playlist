@@ -36,6 +36,45 @@ def append_stats_to_file(stats: PlaylistStats):
         f.write(dated_stats.json())
 
 
+def clear_repeated_stats_from_file():
+    """Load the playlist stats file lines, clear repeated lines and save it again.
+    Lines are considered duplicates if their "date" key is the same. The last line found is kept."""
+    stats_file = general_settings.get_required("playlist_stats_file")
+
+    with open(stats_file, "r") as f:
+        lines = f.readlines()
+
+    dates_strs: Set[str] = set()
+    for line in lines:
+        line_stats = DatedPlaylistStats.parse_raw(line)
+        dates_strs.add(line_stats.date)
+
+    dates_lines: Dict[str, List[int]] = dict()  # example: { "2022-10-01": [14, 15] } (lines where each date is found)
+    for i, line in enumerate(lines):
+        for date_str in dates_strs:
+            if date_str in line:
+                if date_str in dates_lines:
+                    dates_lines[date_str].append(i)
+                else:
+                    dates_lines[date_str] = [i]
+                break
+
+    lines_delete: List[int] = list()
+    for lines_delete_iter in dates_lines.values():
+        if len(lines_delete_iter) < 2:
+            continue
+        lines_delete_iter.sort()
+        lines_delete.extend(lines_delete_iter[:-1])  # add all elements from `lines_delete_iter` except the last one
+
+    lines_delete.sort(reverse=True)
+    for line_delete in lines_delete:
+        lines.pop(line_delete)
+
+    with open(stats_file, "w") as f:
+        data = "\n".join([line.strip() for line in lines])
+        f.write(data)
+
+
 def load_stats() -> Dict[str, DatedPlaylistStats]:
     """Load the persisted stats from the stats ndjson file, and returns them as dict of {date(str), DatedPlaylistStats} objects,
     returned in the same order as read from the file (considering Python >= 3.6 keeps insertion order on dicts).
