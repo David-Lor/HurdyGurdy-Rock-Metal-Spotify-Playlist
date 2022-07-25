@@ -2,7 +2,7 @@ name: "Pull Playlist"
 on:
   workflow_dispatch: {}
   schedule:
-    - cron: "0 4 * * *"  # daily at 4am
+    - cron: "0 4 * * *"  # daily at 04:00 UTC
 
 jobs:
   playlistPull:

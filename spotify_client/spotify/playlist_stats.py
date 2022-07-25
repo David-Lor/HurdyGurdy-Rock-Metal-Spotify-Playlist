@@ -1,5 +1,6 @@
 import json
-from typing import Optional, List, Dict
+import datetime
+from typing import Optional, List, Set, Dict
 
 from spotify_client.spotify.playlist_pull import get_playlist_total_seconds
 from spotify_client.spotify.utils import authenticated_request
@@ -35,6 +36,45 @@ def append_stats_to_file(stats: PlaylistStats):
         f.write(dated_stats.json())
 
 
+def clear_repeated_stats_from_file():
+    """Load the playlist stats file lines, clear repeated lines and save it again.
+    Lines are considered duplicates if their "date" key is the same. The last line found is kept."""
+    stats_file = general_settings.get_required("playlist_stats_file")
+
+    with open(stats_file, "r") as f:
+        lines = f.readlines()
+
+    dates_strs: Set[str] = set()
+    for line in lines:
+        line_stats = DatedPlaylistStats.parse_raw(line)
+        dates_strs.add(line_stats.date)
+
+    dates_lines: Dict[str, List[int]] = dict()  # example: { "2022-10-01": [14, 15] } (lines where each date is found)
+    for i, line in enumerate(lines):
+        for date_str in dates_strs:
+            if date_str in line:
+                if date_str in dates_lines:
+                    dates_lines[date_str].append(i)
+                else:
+                    dates_lines[date_str] = [i]
+                break
+
+    lines_delete: List[int] = list()
+    for lines_delete_iter in dates_lines.values():
+        if len(lines_delete_iter) < 2:
+            continue
+        lines_delete_iter.sort()
+        lines_delete.extend(lines_delete_iter[:-1])  # add all elements from `lines_delete_iter` except the last one
+
+    lines_delete.sort(reverse=True)
+    for line_delete in lines_delete:
+        lines.pop(line_delete)
+
+    with open(stats_file, "w") as f:
+        data = "\n".join([line.strip() for line in lines])
+        f.write(data)
+
+
 def load_stats() -> Dict[str, DatedPlaylistStats]:
     """Load the persisted stats from the stats ndjson file, and returns them as dict of {date(str), DatedPlaylistStats} objects,
     returned in the same order as read from the file (considering Python >= 3.6 keeps insertion order on dicts).
@@ -58,6 +98,29 @@ def load_stats() -> Dict[str, DatedPlaylistStats]:
     return parsed_dates_stats
 
 
+def filter_stats_monthly(dates_stats: Dict[str, DatedPlaylistStats]):
+    """Filter the given `dates_stats` dict, leaving only the last data point for each month.
+    The modifications are performed in-place on the dict."""
+    months_dates: Dict[str, List[datetime.date]] = dict()  # example: { "2022-01": ["2022-01-10", "2022-01-17"] }
+    for date_str in dates_stats.keys():
+        date = datetime.date.fromisoformat(date_str)
+        month_str = date.strftime("%Y-%m")
+
+        if month_str in months_dates:
+            months_dates[month_str].append(date)
+        else:
+            months_dates[month_str] = [date]
+
+    delete_dates_strs: Set[str] = set()
+    for month_str, dates in months_dates.items():
+        dates.sort()
+        delete_dates = dates[:-1]  # get all elements from `dates` except the last one
+        delete_dates_strs.update(d.isoformat() for d in delete_dates)
+
+    for delete_date_str in delete_dates_strs:
+        dates_stats.pop(delete_date_str)
+
+
 def export_chart():
     """Load the persisted stats from the stats file, and generate a chart using plotly, exporting it as a picture.
     More info about plotly export and supported output files: https://plotly.com/python/static-image-export/
@@ -65,13 +128,13 @@ def export_chart():
     import plotly.graph_objects as go
     import pandas as pd
 
-    stats = load_stats()
+    dates_stats = load_stats()
+    filter_stats_monthly(dates_stats)
     chart_file = general_settings.get_required("playlist_chart_file")
 
     dataframe_followers = dict(date=[], value=[])
     dataframe_songs = dict(date=[], value=[])
     dataframe_duration = dict(date=[], value=[])
-    dates_stats = load_stats()
 
     for date, stats in dates_stats.items():
         dataframe_followers["date"].append(date)

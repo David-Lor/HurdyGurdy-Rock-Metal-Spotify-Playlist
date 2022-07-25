@@ -3,7 +3,7 @@ from typing import List
 
 from spotify_client.spotify.playlist_pull import pull_playlist
 from spotify_client.spotify.playlist_push import push_playlist
-from spotify_client.spotify.playlist_stats import get_playlist_stats, append_stats_to_file, export_chart
+from spotify_client.spotify.playlist_stats import get_playlist_stats, append_stats_to_file, clear_repeated_stats_from_file, export_chart
 from spotify_client.spotify.authentication import initial_login, acquire_access_token
 from spotify_client.persistence import save_refresh_token, save_playlist, load_playlist
 from spotify_client.models import SongInRepo
@@ -44,6 +44,7 @@ def export_stats():
     local_songs = load_playlist()
     stats = get_playlist_stats(local_songs)
     append_stats_to_file(stats)
+    clear_repeated_stats_from_file()
 
 
 COMMANDS = {
