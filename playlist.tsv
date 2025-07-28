@@ -22,6 +22,7 @@ id	name	artist	album	total_seconds	comment
 7BjDcDgniMogpK2dZZ5IbD	Deathwalker	Eluveitie	Ategnatos	293	
 1DTIkFaIHahCC4D03tpYbr	Mine Is the Fury	Eluveitie	Ategnatos	213	
 0plxN3RAOKckq5IKf3jQQ7	The Slumber	Eluveitie	Ategnatos	296	
+4wxm46qMm1P7JH1ivm1BQ2	Ambiramus	Eluveitie	Ategnatos	173	
 1pPuNbebubVqqZ04QMVpf1	Breathe	Eluveitie	Ategnatos	328	
 0t8vVaCcJogcPZdV32Vono	Rebirth	Eluveitie	Ategnatos	298	
 2atz0snA2haHPVbwNUmWeJ	Worship	Eluveitie	Ategnatos	334	
@@ -271,16 +272,10 @@ id	name	artist	album	total_seconds	comment
 2Pqfh5s2lAEB67gwoSAywM	Becoming	Mapoi Tarani	Through the Hercynian Forests	398	
 5beGCNu6GpFc6NXuMR2EE8	The Thorny Path	Mapoi Tarani	Through the Hercynian Forests	358	
 5093HFtr00FBn5b6qkMWdP	Catoi Etic Boudoi	Mapoi Tarani	Through the Hercynian Forests	291	
-6GuxeBSZBsOGe8YjvfApAa	Nightmare	Siren's Rain	Nightmares from the Abyss	311	
-5d21CxdMamAU25k3MJtf6U	Wicked Seasons	Siren's Rain	Nightmares from the Abyss	347	
-01y2soDLngnVZuA8nHkOh6	13 Steps to Hell	Siren's Rain	Nightmares from the Abyss	256	
-4qh4GXTB2l4o8WbQoACi1N	Miles and Miles	Storm Seeker	Miles and Miles	221	
-4LVPKh5F6iehLnJdkUpjWd	Bottoms Up	Storm Seeker	Miles and Miles	196	
-4TfuXhee4pvVlkV3kuBxs4	Heavaway	Storm Seeker	Heavaway	204	
 4vpnEehpGFiAG1VHZ9TmdX	Dark Intersection	Fenrir's Children	Dark Intersection	255	
 5QBeQy6GDtYLAQJzkgKhRm	Undone - Live OMF 2021	Soulbound	Towards the Sun	223	
 0hyPubBFOF9MUjna5yfBhy	Morrison's Jig	Michalina Malisz	Morrison's Jig	159	
-5ozotKeV1GB3PtcewsqyPo	Judaskuss	Subway To Sally	Kreuzfeuer	250	
+5ozotKeV1GB3PtcewsqyPo	Judaskuss	Michael Bodenski	Kreuzfeuer	250	
 62a1DtLrV3azSwE67deOac	SOS (Bourree)	Ball Noir	Cabinet of Curiosities	345	
 33xR0tijS6FuIJnfV41NOk	Trail	Ball Noir	Cabinet of Curiosities	342	
 2obvTG7NsIEaBLg59Q0rE3	Space	Ball Noir	Cabinet of Curiosities	285	
@@ -346,3 +341,52 @@ id	name	artist	album	total_seconds	comment
 1x7BmwSbET16hC3hMTD4CB	Tu Voz	Lándevir	Un Viaje en el Tiempo	206	
 6RDxaa4zlspRgZTzUTshAL	La Historia se Repite	Lándevir	Un Viaje en el Tiempo	352	
 5R8UVa47px4ROqrOccV5nW	Leyendas del Medievo	Lándevir	Un Viaje en el Tiempo	314	
+6dMBt8RcKKNweXblBi8igB	Malleus Maleficarum	Ariadne's Thread	The Hammer of Witches	244	
+25fZWqX1XM4xJ3WYgAaEdv	Miri it is	Ariadne's Thread	The Hammer of Witches	313	
+3M0XeLSOICl0H2VXTtzFtY	Halny	Ariadne's Thread	The Hammer of Witches	279	
+0urlVVCWHbrLhy0DkLaBXr	Slavic Dance//Herr Mannelig	Ariadne's Thread	The Hammer of Witches	280	
+6NIzWVc5SS2x58yCD7RYFm	A Time for Harvest	Ariadne's Thread	The Hammer of Witches	302	
+5Q60jef3maQOIgnw1rHm4D	Virago	Apocalypse Orchestra	A Plague upon Thee	549	
+1dYNFIvVGVC82JXhnu0otQ	Tempest	Apocalypse Orchestra	A Plague upon Thee	471	
+3DMqzkV7z63FaX2hoEjTgd	Anchorhold	Apocalypse Orchestra	A Plague upon Thee	503	
+0e5ULeJub0S8I32yXVBleO	Sacrament of Avarice	Apocalypse Orchestra	A Plague upon Thee	482	
+7puQoGYNaWTxHpH03LLTte	From the Athanor	Apocalypse Orchestra	A Plague upon Thee	422	
+6tISr7aIFoZOsB25Z6ldbZ	To Arrive	Apocalypse Orchestra	A Plague upon Thee	130	
+3PLOCLRFkBi5AxrroZtv7o	Saint Yersinia	Apocalypse Orchestra	A Plague upon Thee	519	
+3KTCqpT0xYEYmBFnykBfcX	Non Est Deus	Apostasie	Non Est Deus	592	
+4o9BHN6T3NutzJwSYUAS2k	Theotókos	Apostasie	Non Est Deus	419	
+5X15fAVeRtZzOhRmVvwwIs	Isapóstolos	Apostasie	Non Est Deus	422	
+22GzTlAb4GfmDsffeYCUx1	Eikon	Apostasie	Non Est Deus	352	
+3MMFUMOEYMddGnQpb5oO6b	Blut Schreit Palästina	Apostasie	Non Est Deus	106	
+10alT6P6GuZNZBXlk1LfnU	Pein, Pest	Apostasie	Non Est Deus	385	
+2HVwUmlAxY8198RMB3zOvb	Ich, Novus Alexander	Apostasie	Non Est Deus	294	
+3CwnJ2PJ2P13sbQFQWFrLl	Es Ist Kein Gott	Apostasie	Non Est Deus	371	
+2EaIcKrECdPWk4bHtWjGuE	Set the Sails	Storm Seeker	Set the Sails	196	
+1NiX0iDBgPLK2PxEgDgp4v	Homeward Bound	Storm Seeker	Set the Sails	195	
+5VssbFrVHQwcEi8r2TX35E	Old Maui	Storm Seeker	Set the Sails	213	
+2NkbiJX4EKKKSy4bDeKPcG	Don't Break Yer Bones	Storm Seeker	Set the Sails	179	
+4BDD1c9GxJNnfxfGEDfToz	To Golden Times	Storm Seeker	Set the Sails	162	
+6jyegMv5vLrpsTLdKyQYT7	Into the Fray	Storm Seeker	Set the Sails	208	
+0hM2frXsIMXoMqzl2R0dlV	Galway Girl	Storm Seeker	Set the Sails	169	
+2LnAy1gaXdKzqqavjCVzab	Heavaway	Storm Seeker	Nautic Force	204	
+5BPGOpkFznrWQHIi04WyDS	Across the Seven Seas	Storm Seeker	Nautic Force	207	
+2a2I765YSbc8ns7IJ06VtE	Miles and Miles	Storm Seeker	Nautic Force	221	
+7utK9rJytm7iko1bhyCR1M	Bottoms Up	Storm Seeker	Nautic Force	196	
+1YMwCWceMNT5kAsOrYQzCl	Bound to the Waves	Storm Seeker	Nautic Force	200	
+2sHVRjsWOBLAydq5ixJZwi	Cannonthunder	Storm Seeker	Nautic Force	254	
+75EtpKQBbh5OWqiPJLoEom	A New Shape	Corte di Lunas	Nemeya	256	
+5tlADvM7DOStVkYTms2JR5	Il desideri di là	Corte di Lunas	Nemeya	228	
+4sfGbVfUFU4CmWfZiyEwdd	Ruins (The Deer)	Corte di Lunas	Nemeya	230	
+2BVl9UflO3KaJJFxHyQHUC	In Every Sky	Corte di Lunas	Nemeya	258	
+5ujTliY6uDUS10erLh8anI	La polse dal ors	Corte di Lunas	Nemeya	209	
+4Uw2OKJJhaaiqmJ5BJHRoV	Driade	Corte di Lunas	Nemeya	306	
+5BoIQIMYumDvRzlyoJPyMM	Fairies and Fireflies	Corte di Lunas	Nemeya	181	
+42wDouWJjY6WAJMcKoGfqM	Bal dal faun	Corte di Lunas	Nemeya	218	
+4p44GH7oRdrO1Ky9cGqUDV	The Grey Wolf	Corte di Lunas	Nemeya	269	
+1XGVUFVZnZZdAxCYVZjZSG	The Holy Wild	Corte di Lunas	Nemeya	380	
+0aUex7xJaIhRBUKgJb8zNk	Eagle's Nest	Corte di Lunas	Nemeya	225	
+3tTut0HcZUP8mHblq466Y0	Taranoías	Eluveitie	Ànv	206	
+1Y3tcDceeHkhYOXM4W3lR4	The Prodigal Ones	Eluveitie	Ànv	224	
+7hXpPR4NhLO0AdjvOuESp9	Awen	Eluveitie	Ànv	262	
+21AFHq5t6PorUrStweEwmi	The Harvest	Eluveitie	Ànv	218	
+7itt1MbVaKKBGpDkD36EbD	Aeon of the Crescent Moon	Eluveitie	Ànv	261	
