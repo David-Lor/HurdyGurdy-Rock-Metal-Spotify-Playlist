@@ -9,16 +9,16 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: actions/checkout@master
+        uses: actions/checkout@v4
         with:
           fetch-depth: 1
       - name: "Setup Python"
-        uses: actions/setup-python@master
+        uses: actions/setup-python@v5
         with:
           python-version: "3.8"
           architecture: "x64"
       - name: "Cache Python packages"
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           key: "python_cache_base-${{ hashFiles('**/spotify_client/requirements.txt') }}"
           path: |
